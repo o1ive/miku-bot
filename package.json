@@ -1,0 +1,24 @@
+{
+  "name": "miku-bot",
+  "version": "1.0.0",
+  "description": "miku-bot",
+  "main": "app.ts",
+  "scripts": {
+    "nodemon-watch": "nodemon -ext js,ts -exec ts-node dist/app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/o1ive/miku-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/o1ive/miku-bot/issues"
+  },
+  "homepage": "https://github.com/o1ive/miku-bot#readme",
+  "dependencies": {
+    "@line/bot-sdk": "^6.2.1",
+    "express": "^4.16.3"
+  }
+}
