@@ -2,10 +2,15 @@
   "name": "miku-bot",
   "version": "1.0.0",
   "description": "miku-bot",
-  "main": "app.ts",
+  "main": "src/app.ts",
   "scripts": {
     "build-ts": "tsc app.ts --outDir dist/app",
-    "nodemon-watch": "nodemon -ext js,ts -exec ts-node dist/app"
+    "nodemon-watch": "nodemon dist/app.js NODE_ENV=development",
+    "start": "npm run build && node dist/app.js",
+    "build-bk": "npm run lint && tsc",
+    "build": "NODE_ENV=development tsc",
+    "test": "jest --forceExit",
+    "lint": "tslint -c tslint.json -p tsconfig.json --type-check"
   },
   "repository": {
     "type": "git",
@@ -22,5 +27,10 @@
     "@line/bot-sdk": "^6.2.1",
     "dotenv": "^6.0.0",
     "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "tslint": "^5.11.0",
+    "tslint-config-airbnb": "^5.10.0",
+    "tsutils": "^2.29.0"
   }
 }
