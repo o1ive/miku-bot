@@ -4,6 +4,7 @@
   "description": "miku-bot",
   "main": "app.ts",
   "scripts": {
+    "build-ts": "tsc app.ts --outDir dist/app",
     "nodemon-watch": "nodemon -ext js,ts -exec ts-node dist/app"
   },
   "repository": {
