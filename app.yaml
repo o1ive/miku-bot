@@ -1,7 +1,7 @@
 runtime: nodejs
 env: flex
 
-service: miku-bot
+# service: miku-bot
 
 manual_scaling:
   instances: 1

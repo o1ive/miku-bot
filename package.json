@@ -5,8 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "nodemon-watch": "nodemon dist/app.js NODE_ENV=development",
-    "start": "npm run build && node dist/app.js",
-    "build-bk": "npm run lint && tsc",
+    "start": "NODE_ENV=development node dist/app.js",
     "build-ts": "tsc -m commonjs",
     "test": "jest --forceExit",
     "lint": "tslint -c tslint.json -p tsconfig.json --type-check"
