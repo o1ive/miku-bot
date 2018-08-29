@@ -10,9 +10,9 @@ resources:
   memory_gb: 0.5
   disk_size_gb: 10
 env_variables:
-  NODE_ENV: development
+  NODE_ENV: 'development'
 skip_files:
-  - ^(.＊/)?.＊/node_modules/.＊$
-  - ^/src/
-  - ^/etc/
-  - ^\.git$
+- ^(.*/)?.*/node_modules/.*$
+- ^/src/
+- ^/etc/
+- ^\.git$
