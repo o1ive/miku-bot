@@ -11,8 +11,28 @@ const line_config = {
 console.log(line_config);
 server.listen(process.env.PORT || 3000);
 
+const bot = new line.Client(line_config);
+
 server.post('/webhook', line.middleware(line_config), (req:any, res:any, next:any) => {
   res.sendStatus(200);
-  console.log(req.body);
-})
+
+  let events_processed:any = [];
+
+  req.body.events.forEach((event:any) => {
+    if (event.type == "message" && event.message.type == "text"){
+      if (event.message.text == "こんにちは"){
+        events_processed.push(bot.replyMessage(event.replyToken, {
+          type: "text",
+          text: "こんにちは初音ミクだよ"
+        }));
+      }
+    }
+  });
+
+  Promise.all(events_processed).then(
+    (response) => {
+      console.log(`${response.length} event(s) processed.`);
+    }
+  );
+});
 
