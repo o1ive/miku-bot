@@ -2,13 +2,12 @@
   "name": "miku-bot",
   "version": "1.0.0",
   "description": "miku-bot",
-  "main": "src/app.ts",
+  "main": "dist/index.js",
   "scripts": {
-    "build-ts": "tsc app.ts --outDir dist/app",
     "nodemon-watch": "nodemon dist/app.js NODE_ENV=development",
     "start": "npm run build && node dist/app.js",
     "build-bk": "npm run lint && tsc",
-    "build": "NODE_ENV=development tsc",
+    "build-ts": "tsc -m commonjs",
     "test": "jest --forceExit",
     "lint": "tslint -c tslint.json -p tsconfig.json --type-check"
   },
@@ -25,6 +24,7 @@
   "homepage": "https://github.com/o1ive/miku-bot#readme",
   "dependencies": {
     "@line/bot-sdk": "^6.2.1",
+    "@types/dotenv": "^4.0.3",
     "dotenv": "^6.0.0",
     "express": "^4.16.3"
   },
